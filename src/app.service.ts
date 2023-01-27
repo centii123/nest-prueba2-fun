@@ -11,9 +11,9 @@ export class AppService {
     @InjectRepository(nombres) private hola: Repository<nombres>
   ){}
 
-   async getHello(/*{limit, offset}: PaginationQueryDTO*/): Promise<nombres[]>{
+   async getHello({limit, offset}: PaginationQueryDTO): Promise<nombres[]>{
 
-      let consulta= await this.hola.find()//query(`SELECT * FROM nombres ORDER BY id_nombres LIMIT ${limit} OFFSET ${offset}`,);//O
+      let consulta= await this.hola.query(`SELECT * FROM nombres ORDER BY id_nombres LIMIT ${limit} OFFSET ${offset}`,); //O-.find()
 
         return consulta
       

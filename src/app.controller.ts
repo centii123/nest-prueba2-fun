@@ -10,9 +10,9 @@ export class AppController {
   constructor(private appService: AppService, private muchos:MuchosAmuchosService) {}
 
   @Get()
-  //@UsePipes(ValidationPipe) //para la paginacion
-  getHello(/*@Query() paginacion:PaginationQueryDTO*/) {
-      let hola=this.appService.getHello(/*paginacion*/);
+  @UsePipes(ValidationPipe) //para la paginacion
+  getHello(@Query() paginacion:PaginationQueryDTO) {
+      let hola=this.appService.getHello(paginacion);
       /*hola.then(
         e=>{
           return e

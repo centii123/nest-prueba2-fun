@@ -14,7 +14,7 @@ async function bootstrap() {
 
     })
   )
-  app.enableCors(); //error de cors resuelto
+  //app.enableCors(); //error de cors resuelto
   await app.listen(3000);
 }
 bootstrap();
